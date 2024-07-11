@@ -1,0 +1,48 @@
+spring:
+  profiles:
+    active: development
+  datasource:
+    url: jdbc:postgresql://localhost:5432/thortfull
+    username: thortfull
+    password: thortfull_123@
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    enabled: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        ddl-auto: create
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+server:
+  port: 8090
+
+management:
+  endpoints:
+    web.exposure.include:  "*"
+    enabled-by-default: true
+  endpoint:
+    metrics:
+      enabled: true
+    shutdown:
+      enabled: true
+    health:
+      enabled: true
+      probes.enabled: true
+      show-components: always
+      show-details: always
+  server:
+    port: 9001
+
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: INFO
+    org.hibernate: DEBUG
+    root: INFO
+
