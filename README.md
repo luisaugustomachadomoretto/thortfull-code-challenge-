@@ -5,11 +5,25 @@
 - This Micro Service Consumes API from Starwars (People & Films)
 - 2 sample test cases to validate remote host
 
-# Author
 
-- Luis Augusto Machado Moretto
-- malacma@gmail.com
-- +351 932 160 448
+# How to run with Maven
+
+- Requirements
+  - Java 17
+  - Maven
+  - Bash
+
+Build project and generate .jar artifact
+
+`
+mvn clean package
+`
+
+Start micro service
+
+`
+java -jar ./target/ThortfullCodeChallenge-1.2.1-SNAPSHOT.jar
+`
 
 # Micro Service Open API URL
  
@@ -37,24 +51,11 @@ curl -X 'GET' \
 - Spring Boot Actuator is enabled
 - Check URL -> http://localhost:9001/actuator
 
-# How to run with Maven
+# Author
 
-- Requirements
-  - Java 17
-  - Maven
-  - Bash
-
-Build project and generate .jar artifact
-
-`
-mvn clean package
-`
-
-Start micro service
-
-`
-java -jar ./target/ThortfullCodeChallenge-1.2.1-SNAPSHOT.jar
-`
+- Luis Augusto Machado Moretto
+- malacma@gmail.com
+- +351 932 160 448
 
 
 
