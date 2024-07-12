@@ -28,7 +28,7 @@ curl -X 'GET' \
 ## Call Film by ID
 
 `
-url -X 'GET' \
+curl -X 'GET' \
 'http://localhost:8090/api/v1/starwars/film/5' \
 -H 'accept: application/json'
 `
@@ -43,6 +43,7 @@ url -X 'GET' \
   - Java 17
   - Maven
   - Bash
+
 `
 mvn clean package
 java -jar ./target/ThortfullCodeChallenge-1.2.1-SNAPSHOT.jar
