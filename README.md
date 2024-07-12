@@ -1,4 +1,4 @@
-# thortfull-code-challenge
+# 🪐 thortfull-code-challenge
  
 - Thorthfull code challenge. 
 - Based on George Lucas dreams :D
@@ -44,10 +44,13 @@ curl -X 'GET' \
   - Maven
   - Bash
 
+Build project and generate .jar artifact
+
 `
 mvn clean package
 `
 
+Start micro service
 `
 java -jar ./target/ThortfullCodeChallenge-1.2.1-SNAPSHOT.jar
 `

@@ -29,12 +29,12 @@ import java.util.Optional;
 @RequestMapping("api/v1")
 @Slf4j
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class FilmController {
+public class DeathStarController {
 
     final FilmService filmService;
 
     @Autowired
-    public FilmController(FilmService filmService) {
+    public DeathStarController(FilmService filmService) {
         this.filmService = filmService;
     }
 
