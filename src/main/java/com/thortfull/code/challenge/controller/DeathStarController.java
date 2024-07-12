@@ -2,7 +2,7 @@ package com.thortfull.code.challenge.controller;
 
 //import io.swagger.annotations.Api;
 
-import com.thortfull.code.challenge.service.FilmService;
+import com.thortfull.code.challenge.service.DeathStarService;
 import com.thortfull.code.challenge.vo.Film;
 import com.thortfull.code.challenge.vo.People;
 import io.swagger.v3.oas.annotations.Operation;
@@ -16,7 +16,6 @@ import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,11 +30,11 @@ import java.util.Optional;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class DeathStarController {
 
-    final FilmService filmService;
+    final DeathStarService deathStarService;
 
     @Autowired
-    public DeathStarController(FilmService filmService) {
-        this.filmService = filmService;
+    public DeathStarController(DeathStarService deathStarService) {
+        this.deathStarService = deathStarService;
     }
 
 
@@ -73,13 +72,11 @@ public class DeathStarController {
 
         log.info("Request for movie ID: {}", filmId);
 
-        final var film = this.filmService.getFilmByID(filmId);
-
-        var status = film.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.FOUND;
+        final var film = this.deathStarService.getFilmByID(filmId);
 
         log.info("Response is {} for movie ID: {}", film, filmId);
 
-        return ResponseEntity.status(status).body(film).getBody();
+        return ResponseEntity.ok(film).getBody();
     }
 
     @ApiResponses(value = {
@@ -116,13 +113,12 @@ public class DeathStarController {
 
         log.info("Request for people ID: {}", peopleId);
 
-        final var people = this.filmService.getPeopleByID(peopleId);
-
-        var status = people.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.FOUND;
+        final var people = this.deathStarService.getPeopleByID(peopleId);
 
         log.info("Response is {} for people ID: {}", people, peopleId);
 
-        return ResponseEntity.status(status).body(people).getBody();
+        return ResponseEntity.ok(people).getBody();
+
     }
 
 }
