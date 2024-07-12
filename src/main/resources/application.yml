@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/thortfull
     username: thortfull
-    password: thortfull_123@
+    password: thortfull
     driver-class-name: org.postgresql.Driver
   jpa:
     enabled: true
@@ -37,7 +37,10 @@ management:
       show-details: always
   server:
     port: 9001
-
+swagger:
+  openapi:
+     prod-url: "https://www.thortfull.com:8081"
+     dev-url: "http://localhost:8090"
 logging:
   pattern:
     console: "%d %-5level %logger : %msg%n"
