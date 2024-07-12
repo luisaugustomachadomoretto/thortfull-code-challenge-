@@ -85,11 +85,11 @@ public class DeathStarController {
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "200",
-                    description = "Found someone from Starwars",
+                    description = "Found someone from Stars",
                     content = {
                             @Content(
                                     mediaType = MediaType.APPLICATION_JSON_VALUE,
-                                    schema = @Schema(implementation = Film.class)
+                                    schema = @Schema(implementation = People.class)
                             )
                     }
             ),
