@@ -46,7 +46,8 @@ curl -X 'GET' \
 
 `
 mvn clean package
-
+`
+`
 java -jar ./target/ThortfullCodeChallenge-1.2.1-SNAPSHOT.jar
 `
 
